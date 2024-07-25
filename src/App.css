@@ -1,11 +1,12 @@
 body{
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
-  background-color: #f8f8f8;
+  background-color: #2b2929;
   -webkit-font-smoothing: antialiased; /* Smooth fonts for WebKit browsers */
   -moz-osx-font-smoothing: grayscale; /* Smooth fonts for macOS */
 }
@@ -17,7 +18,7 @@ body{
 }
 
 .container{
-  max-width: 100%;
+  width: 100%;
   padding: 0 0;
 
 }
@@ -40,25 +41,47 @@ nav{
   padding: 10px;
 } */
 
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(225, 220, 220);
+  margin: 5px 0;
+}
+
 .nav-item{
   display: flex;
   justify-content: space-around;
   list-style: none;
 }
 
-.nav-list{
-  display: flex;
-  align-items: center;
-}
 
-.nav-link{
+.nav-item a{
   text-decoration: none;
   padding: 6px 10px;
   color: #828282;
 }
 
-.nav-link:hover{
-  text-decoration: solid #00FF00;
+.nav-item a:hover{
+  color: #00FF00;
+}
+
+.menu-bar{
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 786px) {
+  .menu-bar{
+    display: block;
+  }
+
+  .nav-item{
+    display: none;
+  }
+
+  .nav-item.visible{
+    display: flex;
+  }
 }
 
 /* Hero Section */
@@ -67,16 +90,23 @@ nav{
   display: flex;
   padding: 40px 130px;
   background-color: #070404;
+  max-width: 100%;
 }
 
 .imageSection{
   padding-right: 10%;
+  margin-left: 20px;
 }
 
 .textSection{
   padding-top: 20px;
   padding-left: 40px;
   margin-left: 20px;
+  max-width: 100%;
+}
+
+.text{
+  padding-left: 20px;
 }
 
 .textSection h1{
@@ -99,5 +129,59 @@ nav{
 }
 
 .textSection p span{
+  margin-top: -30px;
   color: #00FF00;
+}
+
+.btn{
+  display: flex;
+}
+
+.btn button{
+  border-radius: 25px;
+  color: #070404;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: #00FF00;
+  border-style: none;
+}
+
+
+.contact-Me button{
+  padding: 8px 40px;
+}
+
+.view-project button{
+  padding: 8px 30px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .imageSection{
+    display: none;
+  }
+
+  .heroSection{
+    padding: 20px 50px;
+  }
+
+  .textSection{
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+
+  .text{
+    padding: 0px ;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .btn{
+    display: block;
+  }
+
+  .view-project button{
+    margin-top: 10px;
+  }
 }
